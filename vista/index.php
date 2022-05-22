@@ -22,4 +22,9 @@ if($_SERVER['REQUEST_METHOD'] == 'PUT'){
     $controlador->put();
 }
 
+if($_SERVER['REQUEST_METHOD'] == 'DELETE'){
+
+    $controlador->delete();
+}
+
 ?>
