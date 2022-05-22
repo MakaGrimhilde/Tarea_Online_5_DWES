@@ -35,6 +35,11 @@ class controlador{
         $this->modelo->put();
         
     }
+
+    public function delete(){
+
+        $this->modelo->delete();
+    }
 }
 
 

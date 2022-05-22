@@ -118,6 +118,24 @@ class modelo {
         
    }
 
+   public function delete(){
+
+        try{
+
+            $id = $_GET['id'];
+
+            $query = $this->conexion->prepare("DELETE FROM entradas where id=:id");
+            $query = bindValue(':id', $id);
+            $query->execute();
+            header("HTTP/1.1 200 OK");
+            exit();
+
+        } catch(PDOException $ex){
+
+            return $ex->getMessage();
+        }
+   }
+
 }
 
 /**
