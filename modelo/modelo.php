@@ -95,6 +95,29 @@ class modelo {
 
    }
 
+   public function put(){
+
+        try{
+
+            $entrada = $_GET;
+            $entradaId = $entrada['id'];
+            $campos = getParams($entrada);
+
+            $sql = "UPDATE entradas SET $campos WHERE id='$entradaId';";
+            $query = $this->conexion->prepare($sql);
+            bindAllValues($query, $entrada);
+            $query->execute();
+            header("HTTP/1.1 200 OK");
+            exit();
+
+        } catch(PDOException $ex){
+
+            return $ex->getMessage();
+        }
+
+        
+   }
+
 }
 
 /**

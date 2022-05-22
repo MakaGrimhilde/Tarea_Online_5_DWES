@@ -2,28 +2,46 @@
 
 require "../modelo/modelo.php";
 
+class controlador{
 
-    $modelo = new modelo();
+    private $modelo;
 
-    
-    if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+    public function __construct(){
+
+        $this->modelo = new modelo();
+    }
+
+    public function get(){
 
         if(isset($_GET['id'])){
 
-            $modelo->getId();
+            $this->modelo->getId();
             
         } else {
 
-            $modelo->get();
-        }
+            $this->modelo->get();
+        } 
 
     }
 
+    public function post(){
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-        $modelo->post();
+        $this->modelo->post();
+        
     }
+
+    public function put(){
+
+        $this->modelo->put();
+        
+    }
+}
+
+
+ 
+
+    
+     
     
 
 ?>
