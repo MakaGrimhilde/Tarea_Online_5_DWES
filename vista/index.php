@@ -7,6 +7,7 @@ require_once "../controlador/controlador.php";
 //definición de objeto tipo controlador
 $controlador = new controlador();
 
+//serie de ifs que según el tipo de petición se accede a la función correspondiente
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     $controlador->get();
